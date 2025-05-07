@@ -122,3 +122,6 @@ shape = SubResource("CapsuleShape2D_xm08b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_xm08b")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_DetectionArea_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_DetectionArea_body_exited"]

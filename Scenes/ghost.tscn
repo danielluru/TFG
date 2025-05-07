@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bn26kb54i8jtu"]
+[gd_scene load_steps=13 format=3 uid="uid://bn26kb54i8jtu"]
 
 [ext_resource type="Texture2D" uid="uid://bmwbs1xokp1tx" path="res://Assets/SGQ_Enemies/normal/16x16/ghost.png" id="1_3mxmt"]
+[ext_resource type="Script" uid="uid://c1y7ele0svwy6" path="res://Script/ghost.gd" id="1_e3r4w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e3r4w"]
 atlas = ExtResource("1_3mxmt")
@@ -68,7 +69,11 @@ animations = [{
 radius = 6.0
 height = 14.0
 
-[node name="Ghost" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_3mxmt"]
+radius = 29.0689
+
+[node name="Ghost" type="CharacterBody2D"]
+script = ExtResource("1_e3r4w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7hbae")
@@ -77,3 +82,11 @@ autoplay = "move"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_3mxmt")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_3mxmt")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_DetectionArea_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_DetectionArea_body_exited"]
