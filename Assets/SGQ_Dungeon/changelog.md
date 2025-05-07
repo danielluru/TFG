@@ -24,4 +24,3 @@
 * **Removed raw files**: removed raw aseprite files
 * **Toxic sewer tileset**: small fix on right walls and corner.
 * **Slime**: small update of the moving animation.
-
