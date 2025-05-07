@@ -33,5 +33,5 @@ func _physics_process(delta: float) -> void:
 
 
 func apply_knockback(force: Vector2):
-	position += force * 0.10  # Empuje suave
+	position += force * 0.08  # Empuje suave
 	$AnimatedSprite2D.play("death")

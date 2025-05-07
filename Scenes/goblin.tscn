@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://r0tx2bcwncj1"]
+[gd_scene load_steps=17 format=3 uid="uid://r0tx2bcwncj1"]
 
+[ext_resource type="Script" uid="uid://rm2mb6ev1tkn" path="res://Script/goblin.gd" id="1_xcvi8"]
 [ext_resource type="Texture2D" uid="uid://bevritb0hi33i" path="res://Assets/SGQ_Enemies/normal/16x16/goblin.png" id="1_xm08b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xcvi8"]
@@ -101,7 +102,11 @@ animations = [{
 radius = 6.0
 height = 16.0
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_xm08b"]
+radius = 43.0
+
+[node name="Goblin" type="CharacterBody2D"]
+script = ExtResource("1_xcvi8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_m25tm")
@@ -112,3 +117,8 @@ frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_xm08b")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_xm08b")

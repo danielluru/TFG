@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name Bat
+class_name Goblin
 
 var speed = 20
 var player: Node2D = null
