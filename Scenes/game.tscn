@@ -911,13 +911,14 @@ layer_2/z_index = 2
 layer_2/tile_data = PackedInt32Array(-327681, 7, 8, -393217, 7, 8, 5, 7, 8, 6, 7, 8)
 
 [node name="Player" parent="." instance=ExtResource("1_ebmjs")]
+position = Vector2(4, 4)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -7)
 zoom = Vector2(2, 2)
 
 [node name="Slime" parent="." instance=ExtResource("9_h4fw4")]
-position = Vector2(-38, -47)
+position = Vector2(-84, -160)
 
 [node name="Bat" parent="." instance=ExtResource("10_ldgsr")]
 position = Vector2(36, -214)
